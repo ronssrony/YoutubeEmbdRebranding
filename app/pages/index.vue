@@ -1,22 +1,10 @@
 <script setup lang="ts">
-import { onMounted, nextTick } from 'vue'
 
-onMounted(async () => {
-  await nextTick();
-  const vdsblocker = document.querySelector('.vds-blocker');
-  console.log('vdsblocker', vdsblocker);
-  if (vdsblocker) {
-    console.log('Clicking vds-blocker to remove it');
-    (vdsblocker as HTMLElement).click();
-  }
-});
 </script>
 
 <template>
-  <div class="video-container">
     <client-only>
       <media-player
-          class="vds-video-layout"
           title="GAME OF THRONES"
           src="https://www.youtube.com/watch?v=TZE9gVF1QbA&ab_channel=GameofThrones"
           poster="/posterGot.png"
@@ -29,33 +17,9 @@ onMounted(async () => {
         </media-video-layout>
       </media-player>
     </client-only>
-  </div>
 </template>
 
 <style scoped>
-.video-container {
-  width: 100%;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow:
-      0 25px 50px -12px rgba(0, 0, 0, 0.25),
-      0 0 0 1px rgba(255, 255, 255, 0.05);
-  position: relative;
-}
-
-.video-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(249, 115, 22, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
 .vds-video-layout {
   height: 100%;
   width: 100%;
