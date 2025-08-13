@@ -94,7 +94,7 @@ const YOUTUBE_API_KEY = 'AIzaSyCDK-WrRWIfDiZxXD0s5l99MjBhkmeOZ_4';
 const YOUTUBE_API_BASE = 'https://www.googleapis.com/youtube/v3/search';
 
 // Search function
-const searchVideos = async (query = 'trending music', maxResults = 12) => {
+const searchVideos = async (query = 'Trending', maxResults = 12) => {
   try {
     isLoading.value = true;
     const params = new URLSearchParams({
