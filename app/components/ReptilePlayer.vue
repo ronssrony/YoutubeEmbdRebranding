@@ -1,10 +1,4 @@
 <script setup >
-onMounted(async ()=>{
-  await nextTick()
-  const vdsbutton = document.querySelector('media-poster');
-  vdsbutton.click();
-  console.log('vdsbutton', vdsbutton);
-})
 const {source, poster} = defineProps(['source','poster']);
 </script>
 
